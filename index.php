@@ -10,6 +10,18 @@
 </head>
 
 <body>
+  <?php 
+  session_start();
+
+  ?>
+
+  <?php 
+    
+  ?>
+
+  <?php 
+  
+   ?>
   <form method="GET" action="login.php">
     <div class="form-group">
       <label for="exampleInputEmail1">Endereço de email</label>

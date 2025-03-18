@@ -13,9 +13,15 @@ include 'conexao.php';
 
  $query = "SELECT * from usuario where usuario = '$usuario' and senha = '$senha'";
  $resultado = mysqli_query($mysqli, $query);
- $row = mysqli_num_rows($resultado);
+ $total = mysqli_num_rows($resultado);
 
 
- if($row==1){
+ if($total ==1){
     $_SESSION['usuario'] = $usuario;
+    header('Location: painel.php');
+    exit();
+ }else{
+   $_SESSION['não_autenticado'] = true;
+   header('Location: index.php');
+    exit();
  }

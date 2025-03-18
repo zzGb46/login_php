@@ -1,4 +1,5 @@
 <?php
+echo '<pre>';
 
 $host ='localhost';
 $user = 'root';
@@ -7,3 +8,12 @@ $db ='db_login';
 
 $mysqli = new mysqli($host, $user, $pass, $db);
 
+function foi(){
+    global $mysqli;
+    $query = $mysqli->query("SELECT senha from usuario");
+    $resultado = $query->fetch_assoc();
+    return $resultado;
+}
+var_export(foi());
+
+echo '</pre>';
