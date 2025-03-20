@@ -11,7 +11,7 @@ include 'conexao.php';
  
  $senha= mysqli_real_escape_string($mysqli, $_GET['senha']);
 
- $query = "SELECT * from usuario where usuario = '$usuario' and senha = '$senha'";
+ $query = "SELECT * from tb_user where usuario  = '$usuario' and senha = '$senha'";
  $resultado = mysqli_query($mysqli, $query);
  $total = mysqli_num_rows($resultado);
 
@@ -21,7 +21,7 @@ include 'conexao.php';
     header('Location: painel.php');
     exit();
  }else{
-   $_SESSION['não_autenticado'] = true;
+   $_SESSION['nao_autenticado'] = true;
    header('Location: index.php');
     exit();
  }

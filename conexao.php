@@ -10,7 +10,7 @@ $mysqli = new mysqli($host, $user, $pass, $db);
 
 function foi(){
     global $mysqli;
-    $query = $mysqli->query("SELECT senha from usuario");
+    $query = $mysqli->query("SELECT senha from tb_user");
     $resultado = $query->fetch_assoc();
     return $resultado;
 }

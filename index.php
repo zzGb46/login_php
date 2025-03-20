@@ -16,8 +16,13 @@
   ?>
 
   <?php 
-    
+    if(isset($_SESSION['nao_autenticado'])){
+
+    }
   ?>
+  <script>
+    alert('Erro: Usuário ou senha inválidos!');
+  </script>
 
   <?php 
   
@@ -34,6 +39,7 @@
     </div>
    
     <button type="submit" class="btn btn-primary">Enviar</button>
+    
   </form>
 </body>
 
