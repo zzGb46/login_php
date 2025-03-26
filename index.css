@@ -1,0 +1,28 @@
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+font-family: arial;
+}
+
+body{
+    background-image: linear-gradient(to top, blue, white, black );
+    background-attachment: fixed;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+
+#form{
+    background-image: linear-gradient(to top, black, white, blue);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+   
+}
