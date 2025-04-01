@@ -1,7 +1,7 @@
 <?php
 echo '<pre>';
 
-$host ='localhost';
+$host ='localhost:3307';
 $user = 'root';
 $pass= '';
 $db ='db_login';

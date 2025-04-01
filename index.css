@@ -20,9 +20,25 @@ main{
 
 
 #form{
-    background-image: linear-gradient(to top, black, white, blue);
+    background-image: linear-gradient(to top, white, grey, black);
     padding: 50px;
     display: flex;
     flex-direction: column;
+    border-radius: 30px;
    
+}
+label{
+    color: white;
+}
+
+.mensagem{
+    position: fixed;
+    bottom: 0;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
 }

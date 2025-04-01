@@ -1,27 +1,23 @@
 <?php
-
-$mensagem= "";
+  include ('conexao.php');
+$mensagem ="Preencha os dados do formulario";
 $nome = "";
 $email = "";
 $msg = "";
-if(isset($_POST["nome"], $_POST["email"], $_POST["msg"])){
-    include ('conexao.php');
-    $nome = mysqli_real_escape_string($mysqli, $POST['nome']);
-    $email = mysqli_real_escape_string($mysqli, $POST['email']);
-    $msg = mysqli_real_escape_string($mysqli, $POST['msg']);
+if(isset($_POST['nome'], $_POST['email'], $_POST['msg'])){
+  
+    $nome = mysqli_real_escape_string($mysqli, $_POST['nome']);
+    $email = mysqli_real_escape_string($mysqli, $_POST['email']);
+    $msg = mysqli_real_escape_string($mysqli, $_POST['msg']);
 
-    if(!$nome || !$email || !$msg){
-        $mensagem = "Dados Inválidos";
-    } else{
-        $res= $mysqli->prepare("INSERT into tb_contato(nome, email, msg)
-        values(
-        '$nome',
-        '$email',
-        '$msg')");
-        $stm->bind_param('nome,', $nome);
-        $stm->bind_param('email,', $email);
-        $stm->bind_param('msg,', $msg);
-    }
+$sql = "INSERT INTO tb_contato(nome, email, msg)
+values(
+'$nome',
+'$email',
+'$msg')";
+$resultado = $mysqli->prepare($sql);
+$resultado->execute();
+
 }
 ?>
 
@@ -49,8 +45,10 @@ if(isset($_POST["nome"], $_POST["email"], $_POST["msg"])){
                 <textarea name="msg"></textarea>
                 <button type="submit">Enviar</button>
             </div>
-
         </form>
+        <div class="mensagem">
+            <?=$mensagem ?>
+        </div>
     </main>
 </body>
 
