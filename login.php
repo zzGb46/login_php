@@ -3,6 +3,7 @@
  session_start();
 include 'conexao.php';
 
+
  if(empty($_GET['usuario']) || empty($_GET['senha'])){
     header('Location:index.php');
  }
@@ -11,10 +12,8 @@ include 'conexao.php';
  
  $senha= mysqli_real_escape_string($mysqli, $_GET['senha']);
 
- $query = "SELECT * from tb_user where usuario  = '$usuario' and senha = '$senha'";
- $resultado = mysqli_query($mysqli, $query);
- $total = mysqli_num_rows($resultado);
 
+ require_once('model.php');
 
  if($total ==1){
     $_SESSION['usuario'] = $usuario;

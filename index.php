@@ -21,9 +21,9 @@
 
     }
   ?>
-  <script>
+  <!-- <script>
     alert('Erro: Usuário ou senha inválidos!');
-  </script>
+  </script> -->
 
   <?php 
   
