@@ -1,5 +1,5 @@
 <?php
-echo '<pre>';
+// echo '<pre>';
 
 $host ='localhost:3306';
 $user = 'root';
@@ -14,6 +14,6 @@ function foi2(){
     $resultado = $query->fetch_assoc();
     return $resultado;
 }
-var_export(foi());
+var_export(foi2());
 
-echo '</pre>';
+// echo '</pre>';
