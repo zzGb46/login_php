@@ -6,12 +6,14 @@ $user = 'root';
 $pass= '';
 $db ='db_login';
 
-$mysqli = new mysqli($host, $user, $pass, $db);
+$pdo = new PDO("mysql:dbname=$db;host=$host", "$user", "$pass");
+// $mysqli = new mysqli($host, $user, $pass, $db);
+
 
 function foi2(){
-    global $mysqli;
-    $query = $mysqli->query("SELECT senha from tb_user");
-    $resultado = $query->fetch_assoc();
+    global $pdo;
+    $query = $pdo->query("SELECT * from tb_user");
+    $resultado = $query->fetchAll();
     return $resultado;
 }
 var_export(foi2());

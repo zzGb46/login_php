@@ -40,8 +40,9 @@
     </div>
    
     <button type="submit" class="btn btn-primary">Enviar</button>
-    
   </form>
+
+  <a href="recuperar_senha.php">Esqueceu a senha?</a><br><br>
 </body>
 
 </html>
