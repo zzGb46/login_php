@@ -42,7 +42,11 @@
     <button type="submit" class="btn btn-primary">Enviar</button>
   </form>
 
-  <a href="recuperar_senha.php">Esqueceu a senha?</a><br><br>
+  <a href="Recuperar/recuperar_senha.php">Esqueceu a senha?</a><br><br>
 </body>
+
+
+<h2>Deseja fazer um cadastro?</h2>
+<button><a href="cadastro/cadastro_usuario.php">CLIQUE AQUI!</a></button>
 
 </html>
