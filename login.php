@@ -1,41 +1,20 @@
- <?php
- session_start();
-include 'conexao.php';
+<?php 
+require 'conexao.php';
+session_start();
 
-
- if(empty($_GET['usuario']) || empty($_GET['senha'])){
-    header('Location:index.php');
-    exit;
- }
-
-//  $usuario= mysqli_real_escape_string($mysqli, $_GET['usuario']);
- 
-//  $senha= mysqli_real_escape_string($mysqli, $_GET['senha']);
-
+if(!isset($_GET['usuario'], $_GET['senha'], $_GET['nome'])){
+header('Location:index.php');
+}
 
 $usuario = $_GET['usuario'];
 $senha = $_GET['senha'];
+$nome = $_GET['nome'];
 
-//esta sendo usado o banco de dados
- require_once('model.php');
+require 'model.php';
 
- //JEITO UTILIZADO PARA PDO:
 if(verificarUsuario($usuario, $senha)){
-   $_SESSION['usuario'] = $usuario;
-   header('Location:mailer/formulario.php');
-   exit;
+$_SESSION['usuario']=$usuario;
+header('Location:sistema.php');
 }else{
-   echo 'probreminha';
+   echo 'erro login😭';
 }
-
-
-//JEITO UTILIZADO PARA MYSQLI:
-//  if($total ==1){
-//     $_SESSION['usuario'] = $usuario;
-//     header('Location: painel.php');
-//     exit();
-//  }else{
-//    $_SESSION['nao_autenticado'] = true;
-//    header('Location: index.php');
-//     exit();
-//  }

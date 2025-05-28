@@ -7,10 +7,11 @@ require('conexao.php');
 
 function verificarUsuario($usuario, $senha){
     global $pdo;
-    $query = "SELECT * FROM tb_user where usuario = :usuario and senha = :senha";
+    $query = "SELECT * FROM tb_user where usuario = :usuario and senha = :senha and nome = :nome";
     $resultado = $pdo->prepare($query);
     $resultado->bindParam(':usuario', $usuario);
     $resultado->bindParam(':senha', $senha);
+    $resultado->bindParam(':nome', $nome);
     $resultado->execute();
 
     return $resultado->rowCount() ===1;

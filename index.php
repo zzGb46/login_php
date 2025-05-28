@@ -32,12 +32,19 @@
     <div class="form-group">
       <label for="exampleInputEmail1">Endereço de email</label>
       <input type="email" class="form-control" id="exampleInputEmail1" name="usuario">
-
     </div>
+
     <div class="form-group">
       <label for="exampleInputPassword1">Senha</label>
       <input type="password" name="senha" class="form-control" id="exampleInputPassword1" placeholder="Senha">
     </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">nome</label>
+      <input type="password" name="nome" class="form-control" id="exampleInputPassword1" placeholder="Nome">
+    </div>
+
+    
    
     <button type="submit" class="btn btn-primary">Enviar</button>
   </form>
