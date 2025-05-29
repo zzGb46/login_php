@@ -5,7 +5,7 @@ require('conexao.php');
 //  $total = mysqli_num_rows($resultado);
 
 
-function verificarUsuario($usuario, $senha){
+function verificarUsuario($usuario, $senha, $nome){
     global $pdo;
     $query = "SELECT * FROM tb_user where usuario = :usuario and senha = :senha and nome = :nome";
     $resultado = $pdo->prepare($query);

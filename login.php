@@ -12,9 +12,10 @@ $nome = $_GET['nome'];
 
 require 'model.php';
 
-if(verificarUsuario($usuario, $senha)){
+if(verificarUsuario($usuario, $senha, $nome)){
 $_SESSION['usuario']=$usuario;
-header('Location:sistema.php');
+$_SESSION['senha'] = $senha;
+header('Location:sistema/sistema.php');
 }else{
    echo 'erro login😭';
 }
