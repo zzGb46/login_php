@@ -38,6 +38,23 @@ echo 'hi ' . $_SESSION['usuario'];
 // var_export(foi2());
 
 echo '</pre>';
+
+
+// if (!empty($_GET['id_user'])) {
+//   require 'conexao.php';
+//   $id = $_GET['id_user'];
+
+// }
+
+function indo()
+{
+global $pdo;
+return $pdo->query('SELECT * FROM tb_user');  
+}
+
+$indo = indo();
+var_export($indo);
+
 ?>
 
 
@@ -57,28 +74,28 @@ echo '</pre>';
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">id_user</th>
-          <th scope="col">usuario</th>
-          <th scope="col">senha</th>
-          <th scope="col">nome</th>
-          <th scope="col">...</th>
+          <th>id_user</th>
+          <th>usuario</th>
+          <th>senha</th>
+          <th>nome</th>
+          <th>...</th>
         </tr>
       </thead>
       <tbody>
-        <?php
+        <?php 
         $resultando = foi2();
-        while ($ligado = $resultando->fetch(PDO::FETCH_ASSOC)) {
+        while($lista = $resultando->fetch(PDO::FETCH_ASSOC)){
           echo '<tr>';
-          echo '<td>' . htmlspecialchars($ligado['id_user']) . '</td>';
-          echo '<td>' . htmlspecialchars($ligado['usuario']) . '</td>';
-          echo '<td>' . htmlspecialchars($ligado['senha']) . '</td>';
-          echo '<td>' . htmlspecialchars($ligado['nome']) . '</td>';
-          echo "<td><button>ALTERAR</button></td>";
+          echo '<td>' . htmlspecialchars($lista['id_user']) . '</td>';
+          echo '<td>' . htmlspecialchars($lista['usuario']) . '</td>';
+          echo '<td>' . htmlspecialchars($lista['senha']) . '</td>';
+          echo '<td>' . htmlspecialchars($lista['nome']) . '</td>';
+          echo "<td>  <a href='../alterar_dash.php?id=$lista[id_user]'><button>Alterar</button></a>  </td>";
           echo '</tr>';
         }
         ?>
       </tbody>
-    </table>
+      </table>
   </div>
 </body>
 
