@@ -4,6 +4,14 @@ if (!empty($_GET['id_user'])) {
     require 'conexao.php';
     $id = $_GET['id_user'];
 
+    $sqlSelect = "SELECT * from tb_user where id = :id";
+    $resultando = $pdo->prepare($sqlSelect);
+    $resultando->bindParam(':id', $id);
+
+    if($resultando->rowCount() > 0){
+        
+    }
+    
 }
 
 

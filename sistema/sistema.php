@@ -46,14 +46,7 @@ echo '</pre>';
 
 // }
 
-function indo()
-{
-global $pdo;
-return $pdo->query('SELECT * FROM tb_user');  
-}
 
-$indo = indo();
-var_export($indo);
 
 ?>
 
@@ -70,6 +63,7 @@ var_export($indo);
 </head>
 
 <body>
+  <a href="../index.php"><button>Voltar para login ou cadastrado</button></a>
   <div>
     <table class="table">
       <thead>
@@ -83,15 +77,15 @@ var_export($indo);
       </thead>
       <tbody>
         <?php 
-        $resultando = foi2();
-        while($lista = $resultando->fetch(PDO::FETCH_ASSOC)){
-          echo '<tr>';
-          echo '<td>' . htmlspecialchars($lista['id_user']) . '</td>';
-          echo '<td>' . htmlspecialchars($lista['usuario']) . '</td>';
-          echo '<td>' . htmlspecialchars($lista['senha']) . '</td>';
-          echo '<td>' . htmlspecialchars($lista['nome']) . '</td>';
-          echo "<td>  <a href='../alterar_dash.php?id=$lista[id_user]'><button>Alterar</button></a>  </td>";
-          echo '</tr>';
+        $resultado = foi2();
+        while($lista = $resultado->fetch(PDO::FETCH_ASSOC)){
+          echo "<tr>";
+          echo "<td>" . htmlspecialchars($lista['id_user']) . "</td>";
+          echo "<td>" . htmlspecialchars($lista['usuario']) . "</td>";
+          echo "<td>" . htmlspecialchars($lista['senha']) . "</td>";
+          echo "<td>" . htmlspecialchars($lista['nome']) . "</td>";
+          echo "" . "<td>" . "<a href='../alterar_dash.php?=$lista[id_user]'><button>Alterar</button></a>" . "</td>";
+          echo "</tr>";
         }
         ?>
       </tbody>
