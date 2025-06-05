@@ -10,6 +10,19 @@ body{
     background-attachment: fixed;
 }
 
+#cadastrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+  
+}
+
+#botao{
+    margin: 30px;
+    padding: 10px;
+}
+
 main{
     display: flex;
     justify-content: center;

@@ -24,6 +24,7 @@ if (isset($_POST['user'], $_POST['senha'], $_POST['nome'])) {
 
     if ($sucesso){
         echo 'Usuario cadastrado com sucesso';
+        "<a href = '../index.php'><button>Voltar</button></a>";
     } else {
         echo 'Erro ao cadastrar';
     }
