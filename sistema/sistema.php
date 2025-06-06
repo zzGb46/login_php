@@ -37,7 +37,7 @@ echo 'hi ' . $_SESSION['usuario'];
 
 // var_export(foi2());
 
-echo '</pre>';
+// echo '</pre>';
 
 
 // if (!empty($_GET['id_user'])) {
@@ -45,7 +45,6 @@ echo '</pre>';
 //   $id = $_GET['id_user'];
 
 // }
-
 
 
 ?>
@@ -76,20 +75,20 @@ echo '</pre>';
         </tr>
       </thead>
       <tbody>
-        <?php 
+        <?php
         $resultado = foi2();
-        while($lista = $resultado->fetch(PDO::FETCH_ASSOC)){
+        while ($lista = $resultado->fetch(PDO::FETCH_ASSOC)) {
           echo "<tr>";
           echo "<td>" . htmlspecialchars($lista['id_user']) . "</td>";
           echo "<td>" . htmlspecialchars($lista['usuario']) . "</td>";
           echo "<td>" . htmlspecialchars($lista['senha']) . "</td>";
           echo "<td>" . htmlspecialchars($lista['nome']) . "</td>";
-          echo "" . "<td>" . "<a href='../alterar_dash.php?=$lista[id_user]'><button>Alterar</button></a>" . "</td>";
+          echo "<td>" . "<a href='../alterar_dash.php?id_user=" .  $lista['id_user'] . "'><button>ALTERAR</button></a>" . "</td>";
           echo "</tr>";
         }
         ?>
       </tbody>
-      </table>
+    </table>
   </div>
 </body>
 

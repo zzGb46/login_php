@@ -18,4 +18,15 @@ $pdo = new PDO("mysql:dbname=$db;host=$host", "$user", "$pass");
 // }
 // var_export(foi2());
 
-// echo '</pre>';
+ 
+// function meu(){
+//   global $pdo;
+//   $query = $pdo->query("SELECT * FROM tb_user");
+//   $resolucao = $query->fetch();
+//   return $resolucao;
+// }
+// var_export( meu());
+
+
+
+echo '</pre>';
