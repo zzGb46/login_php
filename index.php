@@ -6,28 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
+
   <title>Document</title>
 </head>
 
 <body>
-  <?php 
+  <?php
   session_start();
+
+  require_once ("conexao.php");
 
   ?>
 
-  <?php 
-    if(isset($_SESSION['nao_autenticado'])){
+  <?php
+  if (isset($_SESSION['nao_autenticado'])) {
 
-    }
+  }
   ?>
   <!-- <script>
     alert('Erro: Usuário ou senha inválidos!');
   </script> -->
 
-  <?php 
-  
-   ?>
+  <?php
+
+  ?>
   <form method="GET" action="login.php">
     <div class="form-group">
       <label for="exampleInputEmail1">Endereço de email</label>
@@ -44,16 +46,24 @@
       <input type="text" name="nome" class="form-control" id="exampleInputPassword1" placeholder="Nome">
     </div>
 
-    
-   
+
+
     <button type="submit" class="btn btn-primary">Enviar</button>
   </form>
 
   <a href="Recuperar/recuperar_senha.php">Esqueceu a senha?</a><br><br>
+
+  <h2>Deseja fazer um cadastro?</h2>
+  <a href="<?php echo missao?>">CLIQUE AQUI!</a>
+
+  <h2>Contato?</h2>
+
+  <a href="<?php echo mensagem?>">Contato</a>
+
+
 </body>
 
 
-<h2>Deseja fazer um cadastro?</h2>
-<button><a href="cadastro/cadastro_usuario.php">CLIQUE AQUI!</a></button>
+
 
 </html>

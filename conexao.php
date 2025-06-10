@@ -1,6 +1,8 @@
 <?php
 // echo '<pre>';
+define("missao", "http://localhost/login_projeto/cadastro/cadastro_usuario.php");
 
+define("mensagem", "http://localhost/login_projeto/mailer/formulario.php");
 $host ='localhost:3306';
 $user = 'root';
 $pass= '';

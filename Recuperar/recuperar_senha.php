@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,31 +11,35 @@
 </head>
 
 <body>
-<?php
-include_once '../conexao.php';
-session_start();
+    <?php
+    include_once '../conexao.php';
+    session_start();
 
-//Receber dados do formulario
-$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+    //Receber dados do formulario
+    $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
-//Acessar o IF quando o usuário clicar no botão acessar do formulário
-if(!empty($dados["SendRecupSenha"])){
-    var_dump($dados);
+    //Acessar o IF quando o usuário clicar no botão acessar do formulário
+    if (!empty($dados["SendRecupSenha"])) {
+        var_dump($dados);
 
-"SELECT * FROM tb_user;";
-}
-?>
+        "SELECT * FROM tb_user;";
+    }
+    ?>
     <h1>Recuperar senha</h1>
     <form method="POST" action="">
         <div class="form-group">
-            <label for="exampleInputEmail1">Endereço de email</label>
+            <label for="exampleInputEmail1">Insira o e-mail cadastrado</label>
             <input type="email" class="form-control" id="exampleInputEmail1" name="usuario">
         </div>
         <input type="submit" value="Recuperar" name="SendRecupSenha">
+        <input type="hidden" name="env" value="form">
     </form>
+    <?php echo verifica_dados(); ?>
 
     <h2>Lembrou a senha?</h2><br>
-    <a href="../index.php"><p>Clique aqui</p></a>
+    <a href="../index.php">
+        <p>Clique aqui</p>
+    </a>
 </body>
 
 <?php
