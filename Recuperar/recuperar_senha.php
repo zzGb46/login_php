@@ -22,7 +22,7 @@
     if (!empty($dados["SendRecupSenha"])) {
         var_dump($dados);
 
-        "SELECT * FROM tb_user;";
+        "SELECT * FROM tb_user;"; 
     }
     ?>
     <h1>Recuperar senha</h1>

@@ -3,6 +3,8 @@
 define("missao", "http://localhost/login_projeto/cadastro/cadastro_usuario.php");
 
 define("mensagem", "http://localhost/login_projeto/mailer/formulario.php");
+
+define("agendamento", "http://localhost/login_projeto/agendamento.php");
 $host ='localhost:3306';
 $user = 'root';
 $pass= '';
